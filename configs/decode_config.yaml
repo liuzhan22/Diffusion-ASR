@@ -1,0 +1,35 @@
+# ./configs/decode_config.yaml
+
+model:
+  # paths
+  whisper_path: "/path/to/whisper"
+  llada_path: "/path/to/llada"
+  ckpt: "/path/to/ckpt/whisper-large-v3-llada-checkpoint_best_epoch_143.pth" # if not "", load model from ckpt for training or evaluation
+
+  # window-level Q-Former
+  second_per_window: 0.333333
+  second_stride: 0.333333
+
+  # LoRA
+  lora: True
+  lora_rank: 8
+  lora_alpha: 32
+  lora_dropout: 0.1
+
+  gen_len: 128 # Max decoding length for one sample.
+  prompt_template: "USER: {}\nASSISTANT:"
+  task_prompt: "Transcribe the audio:"
+
+data:
+  test_data: "/path/to/test_data.json"
+  output_path: "/path/to/output.json"
+
+decode:
+  mode: "semi_ar_deliberation" # Options: "decoding", "diffusion_deliberation", "semi_ar_deliberation"
+
+  steps: 128 # total steps for one sample.
+  block_length: 64 # Only used in "decoding"
+
+  mask_ratio: 0.3 # Only used in "diffusion_deliberation"
+  num_chunks: 4 # Only used in "semi_ar_deliberation"
+  masking_type: "random" # Options: "low_confidence", "random". Only used in "diffusion_deliberation".

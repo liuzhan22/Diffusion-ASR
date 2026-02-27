@@ -1,0 +1,14 @@
+{
+    "annotation": [
+        {
+            "path": "/data/LibriSpeech/train-other-500/1353/121397/1353-121397-0034.flac",
+            "text": "HIS HOUSE HAS BEEN FULL EVER SINCE HE HAS RECEIVED VISITS FROM THE COADJUTOR FROM MADAME DE LONGUEVILLE AND THE PRINCE DE CONTI MADAME DE CHEVREUSE AND MADAME DE VENDOME HAVE LEFT THEIR NAMES AT HIS DOOR",
+            "task": "asr"
+        },
+        {
+            "path": "/data/LibriSpeech/train-other-500/1474/128276/1474-128276-0044.flac",
+            "text": "DID I LEARN DOWN THERE FOR EVERY ONE DID I STILL FIND POOR IN SPIRIT IT WAS THE LIE OF MY PITY THAT I KNEW IN EVERY ONE THAT I SAW",
+            "task": "asr"
+        }
+    ]
+}
