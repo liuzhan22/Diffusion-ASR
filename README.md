@@ -65,14 +65,14 @@ Download [whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) and 
 
 ```bash
 # Launch training on 1 node with 8 GPUs
-torchrun --nnodes=1 --nproc_per_node=8 train.py --config configs/config.yaml
+torchrun --nnodes=1 --nproc_per_node=8 train.py --cfg-path configs/config.yaml
 ```
 
 ### Inference
 Download the checkpoint from [Google Drive](https://drive.google.com/file/d/1btAsCXTHQApnRcl_k5Wfn0zSD08yXHZh/view?usp=sharing).
 
 ```bash
-python3 inference.py --config configs/decode_config.yaml
+python3 inference.py --cfg-path configs/decode_config.yaml
 ```
 You can switch between different decoding and deliberation strategies by modifying the **decode** section in `configs/decode_config.yaml`:
 

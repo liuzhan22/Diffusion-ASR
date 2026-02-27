@@ -19,10 +19,10 @@ logging.basicConfig(
 )
 
 parser = argparse.ArgumentParser(description="Run Whisper-LLaDA inference")
-parser.add_argument("--config-path", type=str, required=True, help="Path to the decode config file.")
+parser.add_argument("--cfg-path", type=str, required=True, help="Path to the decode config file.")
 args = parser.parse_args()
 
-with open(args.config_path, 'r') as f:
+with open(args.cfg_path, 'r') as f:
     config = yaml.safe_load(f)
     
 model_cfg = config['model']
