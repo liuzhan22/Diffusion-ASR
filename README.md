@@ -28,7 +28,7 @@ By leveraging the bidirectional attention and denoising capabilities of LLaDA, w
 3.  **Performance:** On LibriSpeech, the best cascade system achieves 2.25%/4.94% WER on test-clean/test-other, representing a 12.3% relative improvement over the Whisper-LLaMA baseline on the test-other split.
 
 <div align="center">
-  <img src="assets/arch.pdf" width="90%" alt="Architecture"/>
+  <img src="assets/arch.png" width="90%" alt="Architecture"/>
   <br>
   <em>Overview of decoding and deliberation-based processing strategies.</em>
 </div>
@@ -66,6 +66,8 @@ torchrun --nnodes=1 --nproc_per_node=8 train.py --config configs/config.yaml
 ```
 
 ### Inference
+Download the checkpoint from [Google Drive](https://drive.google.com/file/d/1btAsCXTHQApnRcl_k5Wfn0zSD08yXHZh/view?usp=sharing).
+
 ```bash
 python3 inference.py --config configs/decode_config.yaml
 ```
