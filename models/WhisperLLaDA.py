@@ -195,10 +195,6 @@ class WhisperLLaDA(nn.Module):
     @torch.inference_mode()
     def generate(self,
                  samples: dict,
-                #  correction: bool = False,
-                #  mask_ratio: float = 0.3,
-                #  confidence_based_masking: bool = True,
-                #  num_chunks: int = 4,
                  decode_cfg: dict = None,
                  ):
         log_mel = samples['spectrogram']
@@ -318,7 +314,6 @@ class WhisperLLaDA(nn.Module):
                         early_stop = True # If we encounter an EOS in current block, we do not need to look into the next block
 
                     response_embeds = model.get_input_embeddings()(x[:, prompt.shape[1]+log_mel.shape[1]:].to(torch.long))
-                    # x_emb = torch.cat([prompt_embeds, log_mel, response_embeds],dim=1).to(next(model.parameters()).dtype)
                     x_emb[:, prompt.shape[1]+log_mel.shape[1]:, :] = response_embeds
                 
                 if early_stop: break

@@ -72,6 +72,7 @@ torchrun --nnodes=1 --nproc_per_node=8 train.py --cfg-path configs/config.yaml
 Download the checkpoint from [Google Drive](https://drive.google.com/file/d/1btAsCXTHQApnRcl_k5Wfn0zSD08yXHZh/view?usp=sharing).
 
 ```bash
+# Note: Batch inference is not supported yet
 python3 inference.py --cfg-path configs/decode_config.yaml
 ```
 You can switch between different decoding and deliberation strategies by modifying the **decode** section in `configs/decode_config.yaml`:

@@ -29,10 +29,6 @@ def normalize_pair(ref: str, hyp: str) -> Tuple[str, str]:
     return ref, hyp
 
 def compute_wer(pred: List[str], refs: List[str]) -> Tuple[int, int, int, float]:
-    """
-    返回: (ins_errs, del_errs, sub_errs, tot_err_rate_percent)
-    WER = (S + I + D) / N，其中 N 为参考词数
-    """
     ERR = "*"
     subs: Dict[Tuple[str, str], int] = defaultdict(int)
     ins: Dict[str, int] = defaultdict(int)
@@ -59,7 +55,7 @@ def compute_wer(pred: List[str], refs: List[str]) -> Tuple[int, int, int, float]
     return ins_errs, del_errs, sub_errs, round(wer_pct, 2)
 
 def main():
-    ap = argparse.ArgumentParser(description="Compute WER from JSON annotations: fields 'text' and 'llama_output'.")
+    ap = argparse.ArgumentParser(description="Compute WER from JSON annotations: fields 'text' and 'llada_prediction'.")
     ap.add_argument("--json-path", type=str, required=True, help="Input JSON path")
     args = ap.parse_args()
 

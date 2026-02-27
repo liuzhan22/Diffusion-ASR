@@ -1,4 +1,4 @@
-# ./file_inference.py
+# ./inference.py
 
 import torch
 import json
