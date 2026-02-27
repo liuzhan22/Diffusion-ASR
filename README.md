@@ -9,6 +9,9 @@
     <a href="https://github.com/liuzhan22/Diffusion-ASR" target="_blank">
       <img src="https://img.shields.io/badge/GitHub-Code-blue" alt="GitHub Code">
     </a>
+    <a href="https://drive.google.com/file/d/1btAsCXTHQApnRcl_k5Wfn0zSD08yXHZh/view?usp=sharing" target="_blank">
+      <img src="https://img.shields.io/badge/Checkpoint-Google%20Drive-orange.svg" alt="Checkpoint">
+    </a>
     <img src="https://img.shields.io/badge/License-Apache%202.0-green" alt="License">
 </div>
 
@@ -28,7 +31,7 @@ By leveraging the bidirectional attention and denoising capabilities of LLaDA, w
 3.  **Performance:** On LibriSpeech, the best cascade system achieves 2.25%/4.94% WER on test-clean/test-other, representing a 12.3% relative improvement over the Whisper-LLaMA baseline on the test-other split.
 
 <div align="center">
-  <img src="assets/arch.png" width="90%" alt="Architecture"/>
+  <img src="assets/arch.png" width="100%" alt="Architecture"/>
   <br>
   <em>Overview of decoding and deliberation-based processing strategies.</em>
 </div>
